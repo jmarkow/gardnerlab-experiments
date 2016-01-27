@@ -1,0 +1,143 @@
+digraph G {
+
+	rankdir=TB;
+	splines=true;
+	overlap=scalexy;
+
+	node[style=filled, color=cornflowerblue, fontcolor=white, fontsize=10, 
+          fontname=Helvetica]
+
+    edge[arrowhead=vee, arrowtail=inv, arrowsize=.8, color=maroon, fontsize=10,
+          fontcolor=navy]
+
+    datacollection [label="Collect data"]
+
+	subgraph cluster_acquisition {
+
+		style=filled; bgcolor="#D0C0A0";
+
+		label="1. Intan GUI/Open Ephys/NiDAQ"
+		labeljust="r"
+	
+		origin [label="/server/datafolder"]
+
+	}
+
+	subgraph cluster_intanfront {
+
+		style=filled; bgcolor="#D0C0A0";
+
+		label="2. Raw data parsing [intan_frontend.m]"
+		labeljust="r"
+		
+		{ rank=same
+			unproc [label="/mypc/datafolder/unprocessed"]
+			proc [label="/mypc/datafolder/processed"]
+			trash [label="Trash bin"]
+		}
+
+		basedir [label="basedir=/mypc/organized_data/[BIRD]/[EXPERIMENT]/[DATE]/"]
+
+		{ rank=same 
+			gif1 [label="$basedir/gif"]
+			mat1 [label="$basedir/mat"]
+			wav1 [label="$basedir/wav"]
+		}
+
+	}
+
+
+	subgraph cluster_zftftb {
+
+		style=filled; bgcolor="#D0C0A0";
+
+		label="3. Template selection/matching [zftftb_song_clust.m]"
+		labeljust="r"
+
+		{ rank=same
+			manualclust [label="$basedir/mat/[TMP_NAME]"]
+			templatestore [label="/mypc/organized_data/[BIRD]/templates/[TMP_NAME]"]
+		}
+
+	}
+
+	subgraph cluster_robofinch {
+
+		style=filled; bgcolor="#D0C0A0";
+
+		label="4. Automatic template match/alignment [robofinch]"
+		labeljust="r"
+		{ rank=same
+			templatescan [label="Look for templates in each /mypc/organized_data/[BIRD]"]
+			procbird [label="If template present, find matches using SVM boundary"]
+		}	
+
+		stitchdata [label="Stitch aligned data"]
+		matchplacement [label="$basedir/mat/[TMP_NAME]_roboextract/"]
+
+		gif2 [label="$basedir/mat/[TMP_NAME]_roboextract/gif"]
+		mat2 [label="$basedir/mat/[TMP_NAME]_roboextract/mat"]
+		wav2 [label="$basedir/mat/[TMP_NAME]_roboextract/wav"]
+
+		aggplacement [label="$basedir/mat/[TMP_NAME]_roboextract/roboaggregate/roboaggregate.mat"]
+		
+	}
+
+	subgraph cluster_analysis {
+
+		style=filled; bgcolor="#D0C0A0";
+
+		label="5. Data analysis [fluolab/spikoclust]"
+		labeljust="r"
+
+		{
+			rank=same
+			doanalysis [label="Analyze data and generate gorgeous figures"]
+			icandoitbetter [label="This is stupid, I'm rewriting the whole codebase"]
+
+		}
+		
+
+	}
+
+	datacollection -> origin
+	origin -> unproc [label="filecopy_daemon.sh"]
+	unproc -> proc  [label="intan_frontend.m auto moves"]
+	proc -> trash [label="intan_frontend.m auto deletes"]
+	unproc -> basedir [label="Data with mic/ttl/playback"]
+	basedir -> gif1
+	basedir -> mat1
+	basedir -> wav1
+	mat1 -> manualclust
+	manualclust -> templatestore [label="User copies template files"]
+	templatestore -> templatescan
+	templatescan -> procbird
+	procbird -> stitchdata
+	stitchdata -> matchplacement
+	matchplacement -> gif2
+	matchplacement -> mat2
+	matchplacement -> wav2
+	mat2-> aggplacement
+	aggplacement -> doanalysis
+
+
+	{
+		rank=same
+		publish [label="Write/publish fancy paper"]
+		weep [label="Weep into coffee mug"]
+	}
+
+
+	doanalysis -> weep [label="Bad data"]
+	doanalysis -> publish [label="Good(?) data"]
+
+	weep -> datacollection
+	publish -> datacollection
+
+	futility [label="Futility..."]
+
+	doanalysis -> icandoitbetter [label="I give up"]
+	icandoitbetter -> futility
+
+
+}
