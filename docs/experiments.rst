@@ -102,7 +102,7 @@ The back-end (intan_frontend.m)
 #. This starts the file parser with the default settings, which should be fine.  Check out the `documentation <https://github.com/jmarkow/intan_frontend>`_ for a list of all options.
 
 The back-end (template selection/matching, zftftb)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Now data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that files are organized as follows::
 
