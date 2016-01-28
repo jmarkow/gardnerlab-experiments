@@ -55,8 +55,8 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 	#. Be sure to use the "conventional intan file format".  This is the deafult, but you can check ``Select file format`` to be sure.
 
 
-The back-end
-^^^^^^^^^^^^
+The back-end (getting data)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 1. First, you need to get the data from the acquisition computer to your analysis computer.  This is done using a simple bash script `filecopy_deamon.sh <https://github.com/jmarkow/data-handling>`_.  This assumes you're on a Mac or Linux machine for the offline analysis, or you're using a Bash emulator in Windows.  
 2. In the bash terminal you will need to set your ``~/.bash_profile`` (see the repository documentation).  This can be done easily by issuing::
@@ -66,6 +66,24 @@ The back-end
    or if vim isn't your thing::
 	
 	$nano ~/.bash_profile
+
+3. Now you can clone the data-handling repository and symlink the script to somewhere on your PATH::
+   
+   	$cd ~/
+   	$git clone https://github.com/jmarkow/data-handling
+   	$ln -s data-handling/filecopy_daemon.sh /usr/local/bin
+
+   If /usr/local/bin/ doesn't exist, create the directory and add to your PATH in .bash_profile.  Restart the terminal and you should simply be able to run::
+
+   	$filecopy_daemon.sh
+
+4. Once files with the appropriate extension are dumped into the DATAH_SRC directory, they will be moved into the DATAH_DEST directory once they haven't been written to for 5 minutes.
+
+
+The back-end (intan_frontend.m)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 
 Fiber photometry in freely behaving songbirds
