@@ -112,7 +112,7 @@ Data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that file
 
 	>>cd intan_data/[BIRD][EXPERIMENT]/[DATE]/[mat]
 
-#. Now you'll select a template and sounds that match it.  For details see `here <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_.  If you want to use your selection for automatic clustering later, be sure to set the ``train_classifier`` parameter to ``1`` or ``true``.  If you're unsure of how the ``audio_load`` parameter works, be sure to read over `this section <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_ of the documentation. Now::
+#. Now you'll select a template and sounds that match it.  For details see `here <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_.  If you want to use your selection for automatic clustering later, be sure to set the ``train_classifier`` parameter to ``1`` or ``true``.  If you're unsure of how the ``audio_load`` parameter works, be sure to read over `this section of the zftftb documentation <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_. Now::
 
 	>>zftftb_song_clust(pwd,'audio_load',my_audio_fun,'train_classifier',1);
 
