@@ -104,15 +104,15 @@ The back-end (intan_frontend.m)
 The back-end (template selection/matching, zftftb)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Now data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that files are organized as follows::
+Data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that files are organized as follows::
 
 	intan_data/[BIRD]/[EXPERIMENT]/[DATE]/[gif|mat|wav]
 
-The ``gif`` directory contains spectrograms of the microphone trace, ``mat`` contains all of the data aligned to the mic trace, and ``wav`` contains .wav files with the audio only.  ``gif`` and ``wav`` are mostly sanity checks, ``mat`` is where most of the action happens.  Open up MATLAB and navigate to the mat directory::
+#. The ``gif`` directory contains spectrograms of the microphone trace, ``mat`` contains all of the data aligned to the mic trace, and ``wav`` contains .wav files with the audio only.  ``gif`` and ``wav`` are mostly sanity checks, ``mat`` is where most of the action happens.  Open up MATLAB and navigate to the mat directory::
 
 	>>cd intan_data/[BIRD][EXPERIMENT]/[DATE]/[mat]
 
-Now you'll select a template and sounds that match it.  For details see `here <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_.  If you want to use your selection for automatic clustering later, be sure to set the ``train_classifier`` parameter to ``1`` or ``true``.  If you're unsure of how the ``audio_load`` parameter works, be sure to read over `this section <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_ of the documentation. Now::
+#. Now you'll select a template and sounds that match it.  For details see `here <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_.  If you want to use your selection for automatic clustering later, be sure to set the ``train_classifier`` parameter to ``1`` or ``true``.  If you're unsure of how the ``audio_load`` parameter works, be sure to read over `this section <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_ of the documentation. Now::
 
 	>>zftftb_song_clust(pwd,'audio_load',my_audio_fun,'train_classifier',1);
 
