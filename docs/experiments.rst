@@ -83,7 +83,29 @@ The back-end (getting data)
 The back-end (intan_frontend.m)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. warning:: By default, `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ will move the raw data from DATAH_DEST to ``../processed/``, a directory that contains already-processed raw data.  Additionally, the sorted data is placed into ``../../intan_data/``.  These defaults can be changed by passing parameter/value pairs to the script.
+.. warning:: By default, `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ will move the raw data from DATAH_DEST to ``/DATAH_DEST/../processed/``, a directory that contains already-processed raw data.  Additionally, the sorted data is placed into ``/DATAH_DEST/../../intan_data/``.  These defaults can be changed by passing parameter/value pairs to the script.
+
+#. Fire up MATLAB in your terminal::
+	
+	$matlab -nodisplay
+   
+   In OS X, if the matlab executable is not in your PATH, be sure to add it first::
+
+   	ln -s /Applications/MATLAB_R[YOURVERSION].app/bin/matlab /usr/local/bin
+
+   Restart the terminal and first it up, if you're using Linux, you should be savvy enough to adjust the commands to work for your environment.
+
+#. Navigate to DATAH_DEST, if you set it to /Volumes/MYHD/data/unprocessed::
+
+	>>cd /Volumes/MYHD/data/unprocessed
+	>>intan_frontend;
+
+#. This starts the file parser with the default settings, which should be fine.  Check out the `documentation <https://github.com/jmarkow/intan_frontend>`_ for a list of all options.
+
+The back-end (template selection/matching, zftftb)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 
 
 
