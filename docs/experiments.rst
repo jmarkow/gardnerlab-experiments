@@ -108,7 +108,13 @@ Now data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that 
 
 	intan_data/[BIRD]/[EXPERIMENT]/[DATE]/[gif|mat|wav]
 
-The ``gif`` directory contains spectrograms of the microphone trace, ``mat`` contains all of the data aligned to the mic trace, and ``wav`` contains .wav files with the audio only.
+The ``gif`` directory contains spectrograms of the microphone trace, ``mat`` contains all of the data aligned to the mic trace, and ``wav`` contains .wav files with the audio only.  ``gif`` and ``wav`` are mostly sanity checks, ``mat`` is where most of the action happens.  Open up MATLAB and navigate to the mat directory::
+
+	>>cd intan_data/[BIRD][EXPERIMENT]/[DATE]/[mat]
+
+Now you'll select a template and matches to it.  For details see `here <http://zftftb.readthedocs.org/en/latest/usage.html#sound-clustering>`_.
+
+
 
 
 
