@@ -44,7 +44,7 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 
 .. figure:: figures/intan1_highlighted.png
 
-4. Above is a screenshot of a typical session using the Intan software (this is simulated data, if your SNR is this good helllloooo fancy paper).  Some key settings are:
+4. Above is a screenshot of an Intan RHD recording session using the Intan Demo software.  Some key settings are:
 	#. Sampling rate: you should use at least 25 kHz here, especially if you are recording audio
 	#. Adjust the upper bandwidth to half your sampling rate minus some headroom (e.g. 10 kHz when sampling at 25 kHz should be fine).
 	#. Make sure the lower bandwidth is set to .10 Hz, you can always high-pass your data offline.  
@@ -57,7 +57,14 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 The back-end
 ^^^^^^^^^^^^
 
-#. First, you need to get the data from the acquisition computer to your analysis computer.  This is done using a simple bash script
+1. First, you need to get the data from the acquisition computer to your analysis computer.  This is done using a simple bash script `filecopy_deamon.sh <https://github.com/jmarkow/data-handling>`_.  This assumes you're on a Mac or Linux machine for the offline analysis, or you're using a Bash emulator in Windows.  
+2. In the bash terminal you will need to set your ``~/.bash_profile`` (see the repository documentation).  This can be done easily by issuing::
+	
+	$vim ~/.bash_profile
+
+or if vim isn't your thing::
+	
+	$nano ~/.bash_profile
 
 
 Fiber photometry in freely behaving songbirds
