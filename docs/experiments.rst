@@ -118,7 +118,7 @@ Data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that file
 
 This command will let you select a template, cluster the data, and train a classifier for automatic template matching.  
 
-The back-end (automaticing alignments, robofinch)
+The back-end (automating alignments, robofinch)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 
