@@ -1,8 +1,7 @@
 Experiments
 ===========
 
-.. warning:: This contains broad overview of software pipeline used for various experiments in the lab.  Note that this documentation does not dive deep into any one software package, it merely contains recipes for conducting analysis-heavy experiment in MATLAB.
-
+.. warning:: This contains broad overview of the software pipeline used for various experiments in the lab.  Note that this documentation does not dive deep into any one software package, it merely contains recipes for conducting analysis-heavy experiment in MATLAB.
 
 
 The Virtuous Cycle
@@ -93,7 +92,7 @@ The back-end (intan_frontend.m)
 
    	ln -s /Applications/MATLAB_R[YOURVERSION].app/bin/matlab /usr/local/bin
 
-   Restart the terminal and first it up, if you're using Linux, you should be savvy enough to adjust the commands to work for your environment.
+   Restart the terminal and try issuing the first command again. If you're using Linux, you should be savvy enough to adjust the commands to work for your environment.
 
 #. Navigate to DATAH_DEST, if you set it to /Volumes/MYHD/data/unprocessed::
 
@@ -104,6 +103,12 @@ The back-end (intan_frontend.m)
 
 The back-end (template selection/matching, zftftb)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Now data is pouring into ``/DATAH_DEST/../../intan_data/``.  You'll notice that files are organized as follows::
+
+	intan_data/[BIRD]/[EXPERIMENT]/[DATE]/[gif|mat|wav]
+
+The ``gif`` directory contains spectrograms of the microphone trace, ``mat`` contains all of the data aligned to the mic trace, and ``wav`` contains .wav files with the audio only.
 
 
 
