@@ -121,13 +121,20 @@ This command will let you select a template, cluster the data, and train a class
 The back-end (automating alignments, robofinch)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+The `robofinch library <https://github.com/jmarkow/robofinch>`_ manages automation.  This can be used to automatically extract matches to a template and automatically run scripts and generate figures on aligned data. 
 
 
+The back-end (spike sorting, making figures)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+You have arrived at the end of the pipeline.  Data has been processed and aligned, now what do you do with it?    
 
 
 Fiber photometry in freely behaving songbirds
 ---------------------------------------------
+
+This is frighteningly familiar to ephys, so here I'm only going to detail the steps that are different.  Firstly, data for photometry is typically acquired through a National Instruments board, I have been using the PCIE-6323 board with a BNC breakout, BNC 2090A.  MATLAB can control acquisition with National Instruments equipment through the `nyedack library <https://github.com/jmarkow/nyedack>`_.
+
 
 
 
