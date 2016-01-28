@@ -38,9 +38,10 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 
 #. You can use either the `Open Ephys GUI <http://www.open-ephys.org/gui/>`_ or the `Intan Demo software <http://intantech.com/>`_ .  Both should be fine, though I mostly used the Intan software (YMMV).
 #. Ephys is pretty straight-forward these days, plug everything in and start streaming some data.
-#. If you want to use the `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ library, make sure to obey the filename conventions (detailed very explicitly in the repository's documentation). For example, if you are recording from two birds on port A and port B using the Intan RHD evaluation board, you might use the following filename `rm7_HVC_mic0adc_portA&lhp33_HVC_mic1adc_portB`.  This indicates that bird rm7 is on portA, the microphone can be found on adc channel 0, lhp33 is on port B and his mic is being routed to adc 1.  
+#. If you want to use the `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ library, make sure to obey the filename conventions (detailed very explicitly in the repository's documentation). For example, if you are recording from two birds on port A and port B using the Intan RHD evaluation board, you might use the following base filename `rm7_HVC_mic0adc_portA&lhp33_HVC_mic1adc_portB`.  This indicates that bird rm7 is on portA, the microphone can be found on adc channel 0, lhp33 is on port B and his mic is being routed to adc 1.  The software will append date and timestamps, which are automatically parsed by `intan_frontend <https://github.com/jmarkow/intan_frontend>`_.
 
 .. warning:: If you routing a line-level microphone signal to an ADC on the RHD evaluation board, you *must* ensure the voltages are within an acceptable range, 0-3.3V.  There is a board specifically designed for this purpose:  `intan audio shift <https://github.com/jmarkow/intan-audio-shifter>`_.
+
 
 
 Fiber photometry in freely behaving songbirds
