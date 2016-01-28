@@ -36,23 +36,28 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 
 .. warning:: The software used to parse the raw data, `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ reads metadata in the *filename itself*.  This was done for maximum compatability.  If you want to use this software pipeline obey the README of intan_frontend.   
 
-#. You can use either the `Open Ephys GUI <http://www.open-ephys.org/gui/>`_ or the `Intan Demo software <http://intantech.com/>`_ .  Both should be fine, though I mostly used the Intan software (YMMV).  
-#. Ephys is pretty straight-forward these days, plug everything in and start streaming some data.  
-#. If you want to use the `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ library, make sure to obey the filename conventions (detailed very explicitly in the repository's documentation). For example, if you are recording from two birds on port A and port B using the Intan RHD evaluation board, you might use the following base filename ``rm7_HVC_mic0adc_portA&lhp33_HVC_mic1adc_portB``.  This indicates that bird rm7 is on portA, the microphone can be found on adc channel 0, lhp33 is on port B and his mic is being routed to adc 1.  The software will append date and timestamps, which are automatically parsed by `intan_frontend <https://github.com/jmarkow/intan_frontend>`_.
+1. You can use either the `Open Ephys GUI <http://www.open-ephys.org/gui/>`_ or the `Intan Demo software <http://intantech.com/>`_ .  Both should be fine, though I mostly used the Intan software (YMMV).  
+2. Ephys is pretty straight-forward these days, plug everything in and start streaming some data.  
+3. If you want to use the `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ library, make sure to obey the filename conventions (detailed very explicitly in the repository's documentation). For example, if you are recording from two birds on port A and port B using the Intan RHD evaluation board, you might use the following base filename ``rm7_HVC_mic0adc_portA&lhp33_HVC_mic1adc_portB``.  This indicates that bird rm7 is on portA, the microphone can be found on adc channel 0, lhp33 is on port B and his mic is being routed to adc 1.  The software will append date and timestamps, which are automatically parsed by `intan_frontend <https://github.com/jmarkow/intan_frontend>`_.
 
 .. warning:: If you routing a line-level microphone signal to an ADC on the RHD evaluation board, you *must* ensure the voltages are within an acceptable range, 0-3.3V.  There is a board specifically designed for this purpose:  `intan audio shifter <https://github.com/jmarkow/intan-audio-shifter>`_.
 
 .. figure:: figures/intan1_highlighted.png
 
-#. Above is a screenshot of a typical session using the Intan software (this is simulated data, if your SNR is this good helllloooo fancy paper).  Some key settings are:
+4. Above is a screenshot of a typical session using the Intan software (this is simulated data, if your SNR is this good helllloooo fancy paper).  Some key settings are:
 	#. Sampling rate: you should use at least 25 kHz here, especially if you are recording audio
 	#. Adjust the upper bandwidth to half your sampling rate minus some headroom (e.g. 10 kHz when sampling at 25 kHz should be fine).
 	#. Make sure the lower bandwidth is set to .10 Hz, you can always high-pass your data offline.  
 	#. Deactivate any channels you are not using (e.g. if you're using a 16 channel headstage, you can deactivate all channels used for the 32 channel headstage only).
 	#. Activate any adc channels are you using, e.g. adc-0 if you're recording the microphone on adc-0.	
 	#. Set the filename using the appropriate conventions for `intan_frontend <https://github.com/jmarkow/intan_frontend>`_.
+	#. Be sure to use the "conventional intan file format".  This is the deafult, but you can check ``Select file format`` to be sure.
 
 
+The back-end
+^^^^^^^^^^^^
+
+#. First, you need to get the data from the acquisition computer to your analysis computer.  This is done using a simple bash script
 
 
 Fiber photometry in freely behaving songbirds
