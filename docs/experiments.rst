@@ -63,7 +63,7 @@ The back-end
 	
 	$vim ~/.bash_profile
 
-or if vim isn't your thing::
+   or if vim isn't your thing::
 	
 	$nano ~/.bash_profile
 
