@@ -83,6 +83,8 @@ The back-end (getting data)
 The back-end (intan_frontend.m)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
+.. warning:: By default, `intan_frontend <https://github.com/jmarkow/intan_frontend>`_ will move the raw data from DATAH_DEST to ``../processed/``, a directory that contains already-processed raw data.  Additionally, the sorted data is placed into ``../../intan_data/``.  These defaults can be changed by passing parameter/value pairs to the script.
+
 
 
 
