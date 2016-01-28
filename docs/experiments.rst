@@ -1,7 +1,7 @@
 Experiments
 ===========
 
-.. warning:: This contains broad overview of the software pipeline used for various experiments in the lab.  Note that this documentation does not dive deep into any one software package, it merely contains recipes for conducting analysis-heavy experiment in MATLAB.
+.. warning:: This contains broad overview of the software pipeline used for various experiments in the lab.  Note that this documentation does not dive deep into any one software package, it merely contains recipes for conducting analysis-heavy experiments in MATLAB.
 
 
 The Virtuous Cycle
