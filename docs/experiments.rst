@@ -42,7 +42,7 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 
 .. warning:: If you routing a line-level microphone signal to an ADC on the RHD evaluation board, you *must* ensure the voltages are within an acceptable range, 0-3.3V.  There is a board specifically designed for this purpose:  `intan audio shift <https://github.com/jmarkow/intan-audio-shifter>`_.
 
-..figure:: figures/intan1_highlighted.png
+.. figure:: figures/intan1_highlighted.png
 
 #. Above is a screenshot of a typical session using the Intan software (this is simulated data, if your SNR is this good helllloooo fancy paper).  Some key settings are:
 	#. Sampling rate: you should use at least 25 kHz here, especially if you are recording audio
