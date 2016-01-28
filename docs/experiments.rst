@@ -100,6 +100,7 @@ The back-end (intan_frontend.m)
 	>>intan_frontend;
 
 #. This starts the file parser with the default settings, which should be fine.  Check out the `documentation <https://github.com/jmarkow/intan_frontend>`_ for a list of all options.
+#. If you want to stop the parser at any point press ``ctrl-c``, don't worry this won't hurt anything.
 
 The back-end (template selection/matching, zftftb)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
