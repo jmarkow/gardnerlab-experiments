@@ -44,6 +44,7 @@ You won't need anything fancy for your front-end machine.  Shown above are the s
 
 .. figure:: figures/intan1_highlighted.png
 
+
 4. Above is a screenshot of an Intan RHD recording session using the Intan Demo software.  Some key settings are:
 	#. Sampling rate: you should use at least 25 kHz here, especially if you are recording audio
 	#. Adjust the upper bandwidth to half your sampling rate minus some headroom (e.g. 10 kHz when sampling at 25 kHz should be fine).
